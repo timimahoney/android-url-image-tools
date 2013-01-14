@@ -36,4 +36,4 @@ If you want to know when the image has been loaded, then you can set a listener 
 That’s about it for the `UrlImageView`. It will take care of everything else.
 
 ## Using everything else 
-The `UrlImageView` utilizes `UrlImageLoader` and `UrlImageCache`. If you want to use these classes on their own, check out the JavaDocs.
+The `UrlImageView` utilizes `UrlImageLoader` and `UrlImageCache`. If you want to use these classes on their own, check out the JavaDocs in the source files.
