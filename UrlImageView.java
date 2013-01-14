@@ -45,7 +45,7 @@ public class UrlImageView extends ImageView implements UrlImageLoaderDelegate {
 		 *            true if the image loaded, or false if something went
 		 *            wrong.
 		 */
-		public void onImageLoaded(UrlImageView view, boolean didLoad);
+		public void onLoadImage(UrlImageView view, boolean didLoad);
 	}
 
 	public UrlImageView(Context context) {
@@ -64,9 +64,8 @@ public class UrlImageView extends ImageView implements UrlImageLoaderDelegate {
 	}
 
 	private void init() {
-		mUrlImageScale = ScaleType.CENTER_CROP;
-		mPlaceholderScale = ScaleType.CENTER;
-		setScaleType(mPlaceholderScale);
+		mUrlImageScale = getScaleType();
+		mPlaceholderScale = getScaleType();
 	}
 
 	/**
@@ -93,7 +92,7 @@ public class UrlImageView extends ImageView implements UrlImageLoaderDelegate {
 			setImageBitmap(mImage);
 
 			if (mListener != null)
-				mListener.onImageLoaded(this, true);
+				mListener.onLoadImage(this, true);
 		}
 	}
 
@@ -154,7 +153,7 @@ public class UrlImageView extends ImageView implements UrlImageLoaderDelegate {
 			setImageBitmap(mImage);
 
 			if (mListener != null)
-				mListener.onImageLoaded(this, true);
+				mListener.onLoadImage(this, true);
 		}
 	}
 
